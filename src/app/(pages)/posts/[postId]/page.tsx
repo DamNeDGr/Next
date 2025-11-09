@@ -52,10 +52,10 @@ function Page() {
     }
 
     return (
-        <div className="w-screen h-screen flex flex-col items-center justify-center p-5 gap-3">
+        <div className="w-screen h-[100dvh] flex flex-col items-center justify-center p-5 gap-3 lg:h-screen ">
             <PostItem id={post.id} title={post.title} body={post.body} />
             <Link
-                className="bg-blue-700 rounded-md shadow-sm w-1/4 p-2 text-center hover:bg-blue-400 duration-300"
+                className="bg-blue-700 rounded-md shadow-sm w-full lg:w-1/4 p-2 text-center hover:bg-blue-400 duration-300"
                 href="/posts">Все посты</Link>
         </div>
     );

@@ -52,7 +52,7 @@ function PostList() {
 
     return (
         <div>
-            <ul className="w-screen flex flex-col items-center justify-center gap-4">
+            <ul className="w-screen flex flex-col items-center justify-center gap-4 p-4">
                 {posts.map((post) => (
                    <PostItem key={post.id} id={post.id} body={post.body} title={post.title} />
                 ))}
