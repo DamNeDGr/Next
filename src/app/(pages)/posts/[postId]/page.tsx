@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import {IPost} from "@/types/post.types";
 import PostItem from "@/components/posts/PostItem";
 import Link from "next/link";
+import NotFound from "@/app/not-found";
 
 function Page() {
 
@@ -35,24 +36,23 @@ function Page() {
         getPosts();
     }, [])
 
+
     if (loading) {
         return (
-            <div className="w-screen h-screen flex flex-col items-center justify-center p-5 gap-3">
+            <div style={{height: 'calc(100dvh - 60px)'}} className="w-screen  flex flex-col items-center justify-center p-5 gap-3">
                 <h2 className="text-5xl text-blue-400 animate-bounce">Loading...</h2>
             </div>
         );
     }
 
-    if (!post) {
-        return (
-            <div className="w-screen h-screen flex flex-col items-center justify-center p-5 gap-3">
-                <h2 className="text-5xl">Post not found!</h2>
-            </div>
-        );
-    }
+    if (!post) return NotFound()
+
+
 
     return (
-        <div className="w-screen h-[100dvh] flex flex-col items-center justify-center p-5 gap-3 lg:h-screen ">
+        <div
+            style={{height: 'calc(100dvh - 60px)'}}
+            className="w-screen flex flex-col items-center justify-center p-5 gap-3 lg:h-screen ">
             <PostItem id={post.id} title={post.title} body={post.body} />
             <Link
                 className="bg-blue-700 rounded-md shadow-sm w-full lg:w-1/4 p-2 text-center hover:bg-blue-400 duration-300"
