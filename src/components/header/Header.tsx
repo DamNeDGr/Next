@@ -29,7 +29,7 @@ function Header() {
                             <li key={menu.href}>
                                 <Link
                                     style={{color: active ? 'blue' : ''}}
-                                    className="text-xl hover:text-blue-400 hover:bg-gray-600  hover:p-2 hover:rounded-3xl duration-300"
+                                    className="text-xl hover:text-blue-400 hover:bg-gray-600 p-2 hover:rounded-3xl duration-300"
                                     href={menu.href}
                                 >
                                     {menu.label}
