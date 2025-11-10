@@ -8,6 +8,7 @@ export interface IPost {
 
 
 export interface PostItemProps {
+    postIndex?: number;
     id: number;
     title: string;
     body: string;
